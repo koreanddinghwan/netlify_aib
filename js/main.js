@@ -19,14 +19,13 @@ const URL = "https://teachablemachine.withgoogle.com/models/u67KW-Ijyx/";
 let model, webcam, labelContainer, maxPredictions;
 const maxheap = new MaxHeap();
 
-
 startBtn.addEventListener("click", init);
 
 // Load the image model and setup the webcam
 async function init() {
   const modelURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
-  
+
   // load the model and metadata
   // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
   // or files from your local hard drive
@@ -66,8 +65,6 @@ async function predict() {
     labelContainer.childNodes[i].innerHTML = classPrediction;
   }
 }
-
-
 
 /**
  * speakEvent
@@ -110,12 +107,11 @@ const capture = async () => {
 };
 captureBtn.addEventListener("click", capture);
 
-
 const makeWord = async () => {
   var hangeul = convertr(tmpContainer.value);
   tmpContainer.value = "";
   text.value += hangeul;
-}
+};
 wordBtn.addEventListener("click", makeWord);
 
 const runAudioFile = async () => {
@@ -123,6 +119,8 @@ const runAudioFile = async () => {
     const hangeul = text.value[i];
     var audio = new Audio(`audio/${hangeul}.mp3`);
     audio.play();
+    time.sleep(1);
   }
-}
+};
 audioBtn.addEventListener("click", runAudioFile);
+
