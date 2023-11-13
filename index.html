@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <h1>지문자 번환기(demo)</h1>
+    <h3><u>홍, 길, 동 음성만 지원됩니다.</u></h3>
+    <button type="button" id="start-btn">Start</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <div>
+      <textarea id="tmp-container" name="story" rows="1" cols="5"></textarea>
+    </div>
+    <button type="button" id="capture-btn">캡쳐하기</button>
+    <button type="button" id="word-btn">단어만들기</button>
+    <hr></hr>
+    <textarea id="text" name="story" rows="5" cols="33"></textarea>
+    <div>
+      <button type="button" id="speak-btn">기계음(js기본)</button>
+      <button type="button" id="audio-btn">오디오 틀기</button>
+      <button type="button" id="reset-btn">Reset</button>
+    </div>
+    <img src="img/지문자예시.jpeg">
+  </body>
+  <script src="js/main.js" type="module"></script>
+</html>
